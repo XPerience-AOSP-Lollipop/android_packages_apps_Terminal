@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.terminal;
+package com.klozz.terminal;
 
 public abstract class TerminalCallbacks {
     public int damage(int startRow, int endRow, int startCol, int endCol) {

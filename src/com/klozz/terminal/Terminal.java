@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.terminal;
+package com.klozz.terminal;
 
 import android.graphics.Color;
 

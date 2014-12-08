@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.android.terminal;
+package com.klozz.terminal;
 
-import static com.android.terminal.Terminal.TAG;
+import static com.klozz.terminal.Terminal.TAG;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -24,7 +24,7 @@ import android.graphics.Color;
 import android.util.Log;
 import android.view.View;
 
-import com.android.terminal.TerminalView.TerminalMetrics;
+import com.klozz.terminal.TerminalView.TerminalMetrics;
 
 /**
  * Rendered contents of a single line of a {@link Terminal} session.

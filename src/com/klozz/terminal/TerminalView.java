@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.android.terminal;
+package com.klozz.terminal;
 
-import static com.android.terminal.Terminal.TAG;
+import static com.klozz.terminal.Terminal.TAG;
 
 import android.content.Context;
 import android.graphics.Paint;
@@ -34,8 +34,8 @@ import android.view.inputmethod.InputConnection;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 
-import com.android.terminal.Terminal.CellRun;
-import com.android.terminal.Terminal.TerminalClient;
+import com.klozz.terminal.Terminal.CellRun;
+import com.klozz.terminal.Terminal.TerminalClient;
 
 /**
  * Rendered contents of a {@link Terminal} session.

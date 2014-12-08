@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.android.terminal;
+package com.klozz.terminal;
 
-import static com.android.terminal.Terminal.TAG;
+import static com.klozz.terminal.Terminal.TAG;
 
 import android.app.Activity;
 import android.content.ComponentName;
