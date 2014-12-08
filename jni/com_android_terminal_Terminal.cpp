@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2013 The Android Open Source Project
+ * Copyright (C) 2015 The XPerience Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -681,11 +682,11 @@ static jboolean com_android_terminal_Terminal_nativeDispatchKey(JNIEnv *env, jcl
 }
 
 static JNINativeMethod gMethods[] = {
-    { "nativeInit", "(Lcom/android/terminal/TerminalCallbacks;II)J", (void*)com_android_terminal_Terminal_nativeInit },
+    { "nativeInit", "(Lcom/klozz/terminal/TerminalCallbacks;II)J", (void*)com_android_terminal_Terminal_nativeInit },
     { "nativeDestroy", "(J)I", (void*)com_android_terminal_Terminal_nativeDestroy },
     { "nativeRun", "(J)I", (void*)com_android_terminal_Terminal_nativeRun },
     { "nativeResize", "(JIII)I", (void*)com_android_terminal_Terminal_nativeResize },
-    { "nativeGetCellRun", "(JIILcom/android/terminal/Terminal$CellRun;)I", (void*)com_android_terminal_Terminal_nativeGetCellRun },
+    { "nativeGetCellRun", "(JIILcom/klozz/terminal/Terminal$CellRun;)I", (void*)com_android_terminal_Terminal_nativeGetCellRun },
     { "nativeGetRows", "(J)I", (void*)com_android_terminal_Terminal_nativeGetRows },
     { "nativeGetCols", "(J)I", (void*)com_android_terminal_Terminal_nativeGetCols },
     { "nativeGetScrollRows", "(J)I", (void*)com_android_terminal_Terminal_nativeGetScrollRows },
@@ -695,7 +696,7 @@ static JNINativeMethod gMethods[] = {
 
 int register_com_android_terminal_Terminal(JNIEnv* env) {
     ScopedLocalRef<jclass> localClass(env,
-            env->FindClass("com/android/terminal/TerminalCallbacks"));
+            env->FindClass("com/klozz/terminal/TerminalCallbacks"));
 
     android::terminalCallbacksClass = reinterpret_cast<jclass>(env->NewGlobalRef(localClass.get()));
 
@@ -714,7 +715,7 @@ int register_com_android_terminal_Terminal(JNIEnv* env) {
     android::bellMethod = env->GetMethodID(terminalCallbacksClass, "bell", "()I");
 
     ScopedLocalRef<jclass> cellRunLocal(env,
-            env->FindClass("com/android/terminal/Terminal$CellRun"));
+            env->FindClass("com/klozz/terminal/Terminal$CellRun"));
     cellRunClass = reinterpret_cast<jclass>(env->NewGlobalRef(cellRunLocal.get()));
     cellRunDataField = env->GetFieldID(cellRunClass, "data", "[C");
     cellRunDataSizeField = env->GetFieldID(cellRunClass, "dataSize", "I");
@@ -722,7 +723,7 @@ int register_com_android_terminal_Terminal(JNIEnv* env) {
     cellRunFgField = env->GetFieldID(cellRunClass, "fg", "I");
     cellRunBgField = env->GetFieldID(cellRunClass, "bg", "I");
 
-    return jniRegisterNativeMethods(env, "com/android/terminal/Terminal",
+    return jniRegisterNativeMethods(env, "com/klozz/terminal/Terminal",
             gMethods, NELEM(gMethods));
 }
 
